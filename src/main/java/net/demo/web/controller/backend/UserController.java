@@ -1,8 +1,7 @@
-package net.demo.web.controller;
+package net.demo.web.controller.backend;
 
 import net.demo.service.PersonService;
-import net.demo.web.form.Contact;
-
+import net.demo.web.form.backend.UserForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -14,25 +13,25 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @SessionAttributes
-public class ContactController {
+public class UserController {
 
   @Autowired
   private PersonService personService;
 
-	@RequestMapping(value = "/addContact", method = RequestMethod.POST)
-	public String addContact(@ModelAttribute("contact")
-							Contact contact, BindingResult result) {
+	@RequestMapping(value = "/addCUser", method = RequestMethod.POST)
+	public String addContact(@ModelAttribute("personForm")
+                             UserForm userForm, BindingResult result) {
 		
-		System.out.println("First Name:" + contact.getFirstname() + 
-					"Last Name:" + contact.getLastname());
-		
+		System.out.println("First Name:" + userForm.getName() +
+					"Last Name:" + userForm.getCountry());
+		personService.addPerson(userForm);
 		
 		return "redirect:contacts.html";
 	}
 	
-	@RequestMapping("/contacts")
-	public ModelAndView showContacts() {
+	@RequestMapping("/users")
+	public ModelAndView showUsers() {
 		
-		return new ModelAndView("contact", "command", new Contact());
+		return new ModelAndView("user", "command", new UserForm());
 	}
 }
