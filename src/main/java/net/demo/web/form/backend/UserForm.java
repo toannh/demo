@@ -7,7 +7,8 @@ public class UserForm {
   private int id;
   private String username;
   private String password;
-  private boolean enable;
+  private String passwordConfirm;
+  private String enable;
 
   public int getId() {
     return id;
@@ -33,11 +34,19 @@ public class UserForm {
     this.password = password;
   }
 
-  public boolean isEnable() {
+  public String getPasswordConfirm() {
+    return passwordConfirm;
+  }
+
+  public void setPasswordConfirm(String passwordConfirm) {
+    this.passwordConfirm = passwordConfirm;
+  }
+
+  public String getEnable() {
     return enable;
   }
 
-  public void setEnable(boolean enable) {
+  public void setEnable(String enable) {
     this.enable = enable;
   }
 }

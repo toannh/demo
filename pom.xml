@@ -11,6 +11,7 @@
 
   <properties>
     <spring.framework.version>4.1.1.RELEASE</spring.framework.version>
+    <spring.security.version>3.2.5.RELEASE</spring.security.version>
     <apache.tiles.version>3.0.5</apache.tiles.version>
     <javax.servlet.jstl>1.2</javax.servlet.jstl>
     <org.aspectj-version>1.7.4</org.aspectj-version>
@@ -51,6 +52,22 @@
       <groupId>org.springframework</groupId>
       <artifactId>spring-orm</artifactId>
       <version>${spring.framework.version}</version>
+    </dependency>
+    <!--Spring Security-->
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-core</artifactId>
+      <version>${spring.security.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-config</artifactId>
+      <version>${spring.security.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-web</artifactId>
+      <version>${spring.security.version}</version>
     </dependency>
 
     <!--Apache tiles-->
